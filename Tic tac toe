@@ -1,12 +1,9 @@
 // useState: tic tac toe
-// http://localhost:3000/isolated/exercise/04.js
 
 import * as React from 'react'
 import {useLocalStorageState} from '../utils';
 
 function Board({onClick, squares}) {
-  // 🐨 squares is the state for this component. Add useState for squares
-
 
   function renderSquare(i) {
     return (
@@ -18,7 +15,6 @@ function Board({onClick, squares}) {
 
   return (
     <div>
-      {/* 🐨 put the status in the div below */}
       <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}
@@ -71,7 +67,6 @@ function Game() {
   }
 
   function restart() {
-    // 🐨 reset the squares
     setHistory([Array(9).fill(null)]);
   }
   return (
@@ -99,12 +94,11 @@ function calculateStatus(winner, squares, nextValue) {
     : `Next player: ${nextValue}`
 }
 
-// eslint-disable-next-line no-unused-vars
+
 function calculateNextValue(squares) {
   return squares.filter(Boolean).length % 2 === 0 ? 'X' : 'O'
 }
 
-// eslint-disable-next-line no-unused-vars
 function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],
